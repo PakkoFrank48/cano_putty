@@ -1,41 +1,54 @@
-!
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <script>
-        window.onload = function () {
-            var parcial1 = prompt("introduce la calificacion de la perimera parcial");
-            var parcial2 = prompt("introduce la calificacion de la segunda parcial");
-            var parcial3 = prompt("introduce la calificacion de la tercera parcial");
+      var parcial1 = prompt("introduce la calificacion de la perimera parcial");
+      var parcial2 = prompt("introduce la calificacion de la segunda parcial");
+      var parcial3 = prompt("introduce la calificacion de la tercera parcial");
 
+      var suma = Number(parcial1) + Number(parcial2) + Number(parcial3);
 
-            var suma = Number(parcial1) + Number(parcial2) + Number(parcial3);
+      function calificacion() {
+        /*if (parcial1 > 10 || parcial1 < 0)
+          return document.write("valor incorrecto");
 
+        if (parcial2 > 10 || parcial2 < 0)
+          return document.write("valor incorrecto");
 
-            if (parcial1 > 5 && parcial2 > 5 && parcial3 > 5){
-                if(suma > 23){
-                    document.write("Aprobado, puntos: " + suma)
+        if (parcial3 > 10 || parcial3 < 0)
+          return document.write("valor incorrecto");*/
 
-                }else{
-                    document.write("reprobado, puntos: " + suma)
-                }
-            }else{
-                document.write("reprobado automaticamente");
-            }
+        if (!esValido(parcial1) || !esValido(parcial2) || !esValido(parcial3))
+          return document.write("valor incorrecto");
 
-        }
+        if (parcial1 < 6 || parcial2 < 6 || parcial3 < 6)
+          return document.write("reprobado automaticamente");
+
+        if (suma < 24) return document.write("reprobado, puntos: " + suma);
+
+        document.write("Aprobado, puntos: " + suma);
+      }
+
+      function esValido(a) {
+        if (a > 10 || a < 0) return false;
+        else return true;
+      }
+
+      calificacion();
     </script>
-
-</body>
-
+  </body>
 </html>

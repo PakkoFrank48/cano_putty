@@ -1,25 +1,28 @@
 !<!DOCTYPE html>
-<html>  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
   </head>
   <body>
-
     <script>
-        window.onload=function() {
-            var radio = prompt("introduce el radio del circulo ");
-            var pi = 3.14;
-            var perimetro = 2 * pi * Number(radio);
-            var area = pi * (Number(radio)*Number(radio));
-            
-            document.write("el area es " + area + "<br>")
-            document.write("el perimetro es " + perimetro);
-     
-        }
-        </script>
-  
+      window.onload = function () {
+        var radio = Number(prompt("introduce el radio del circulo "));
+        var perimetro = 2 * Math.PI * radio;
+        var area = Math.PI * radio ** 2;
+
+        document.write("el area es " + area + "<br>");
+        document.write("el perimetro es " + perimetro);
+      };
+    </script>
   </body>
 </html>
